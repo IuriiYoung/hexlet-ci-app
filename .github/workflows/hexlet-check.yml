@@ -5,6 +5,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
-            - run: npm setup
-            - run: npm run lint
-            - run: npm run tests
+            - uses: NodeJS>=18
+            - uses: NPM>=6.x
+            - uses: Make
+            - run: npm install
+            - run: npm make install
+            - run: npm make setup
+            - run: npm make test
+            - run: npm make lint
